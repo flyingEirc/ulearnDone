@@ -8,10 +8,12 @@
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
     "copy-assets": "node scripts/copy-assets.mjs",
     "compile": "tsc",
-    "build": "npm run clean && npm run compile && npm run copy-assets",
+    "typecheck": "tsc --noEmit",
+    "build": "pnpm run clean && pnpm run compile && pnpm run copy-assets",
     "watch": "tsc -w",
-    "test": "npm run build && node test/des.test.mjs"
+    "test": "pnpm run build && node test/des.test.mjs"
   },
+  "packageManager": "pnpm@9.15.9",
   "devDependencies": {
     "@types/chrome": "^0.0.268",
     "typescript": "^6.0.3"
