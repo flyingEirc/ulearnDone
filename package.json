@@ -1,0 +1,19 @@
+{
+  "name": "ulearn-stress-extension",
+  "version": "1.0.0",
+  "description": "uLearn 压测插件（Chrome MV3, TypeScript, 纯原生无框架）",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "copy-assets": "node scripts/copy-assets.mjs",
+    "compile": "tsc",
+    "build": "npm run clean && npm run compile && npm run copy-assets",
+    "watch": "tsc -w",
+    "test": "npm run build && node test/des.test.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "typescript": "^6.0.3"
+  }
+}

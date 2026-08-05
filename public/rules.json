@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "Origin", "operation": "set", "value": "https://www.ulearning.cn" },
+        { "header": "Referer", "operation": "set", "value": "https://www.ulearning.cn/" }
+      ]
+    },
+    "condition": {
+      "requestDomains": ["courseapi.ulearning.cn"],
+      "regexFilter": "^https://courseapi\\.ulearning\\.cn/(courses|textbook)",
+      "excludedInitiatorDomains": ["www.ulearning.cn", "ua.ulearning.cn", "ulearning.cn"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "Origin", "operation": "set", "value": "https://ua.ulearning.cn" },
+        { "header": "Referer", "operation": "set", "value": "https://ua.ulearning.cn/" }
+      ]
+    },
+    "condition": {
+      "requestDomains": ["courseapi.ulearning.cn"],
+      "regexFilter": "^https://courseapi\\.ulearning\\.cn/behavior",
+      "excludedInitiatorDomains": ["www.ulearning.cn", "ua.ulearning.cn", "ulearning.cn"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "Origin", "operation": "set", "value": "https://ua.ulearning.cn" },
+        { "header": "Referer", "operation": "set", "value": "https://ua.ulearning.cn/" }
+      ]
+    },
+    "condition": {
+      "requestDomains": ["api.ulearning.cn"],
+      "excludedInitiatorDomains": ["www.ulearning.cn", "ua.ulearning.cn", "ulearning.cn"]
+    }
+  }
+]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>uLearn 压测</title>
+  </head>
+  <body>
+    <header class="hd">
+      <h1>uLearn 压测插件</h1>
+      <span id="runningTag" class="tag hidden">运行中…</span>
+    </header>
+
+    <details id="settings" class="card">
+      <summary>设置（压测参数）</summary>
+      <div class="grid">
+        <label>用户名
+          <input id="userName" type="text" placeholder="hhh" />
+        </label>
+        <label>并发数
+          <input id="concurrency" type="number" min="1" max="64" value="1" />
+        </label>
+        <label>循环次数
+          <input id="repeat" type="number" min="1" max="1000" value="1" />
+        </label>
+      </div>
+    </details>
+
+    <div class="actions">
+      <button id="startBtn" class="primary">开始（读取 Cookie Token + 加载列表）</button>
+      <button id="cancelBtn" class="danger hidden">取消</button>
+    </div>
+
+    <div id="tokenStatus" class="status"></div>
+
+    <section>
+      <h2>信息对象列表 <span id="listCount" class="muted"></span></h2>
+      <ul id="courseList" class="list"></ul>
+    </section>
+
+    <div id="result" class="result hidden"></div>
+
+    <section>
+      <h2>运行日志</h2>
+      <pre id="log" class="log"></pre>
+    </section>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
